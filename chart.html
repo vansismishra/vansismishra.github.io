@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+img {
+    pointer-events: none;
+}
+</style>
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.canvasjs.com/jquery.canvasjs.min.js"></script>
+<script>
+window.onload = function () {
+
+    var chart = new CanvasJS.Chart("chartContainer", {
+        title: {
+            text: "Weekly Weather Forecast"
+        },
+        axisX: {
+            title: "Days",
+            interval: 1
+        },
+        axisY: {
+            title: "Temperature (°C)",
+            suffix: " °C",
+            maximum: 40,
+            gridThickness: 0,
+            interval: 2 // Set the Y-axis interval to match the data values
+        },
+        toolTip: {
+            shared: true,
+            content: "{name}: {y} °C"
+        },
+        data: [{
+            type: "area",
+            color: "blue", // Set the color of the area
+            name: "Temperature",
+            showInLegend: true,
+            dataPoints: [
+                { label: "Monday", y: 26, name: "Temperature" },
+                { label: "Tuesday", y: 27, name: "Temperature" },
+                { label: "Wednesday", y: 27, name: "Temperature" },
+                { label: "Thursday", y: 27, name: "Temperature" },
+                { label: "Friday", y: 26, name: "Temperature" },
+                { label: "Saturday", y: 26, name: "Temperature" },
+                { label: "Sunday", y: 27, name: "Temperature" }
+            ]
+        }]
+    });
+    chart.render();
+
+    var images = [];
+
+    addImages(chart);
+
+    function addImages(chart) {
+        for (var i = 0; i < chart.data[0].dataPoints.length; i++) {
+            images.push($("<img>").attr("src", "https://canvasjs.com/wp-content/uploads/images/gallery/gallery-overview/sunny.png"));
+
+            images[i].attr("class", "sunny").appendTo($("#chartContainer>.canvasjs-chart-container"));
+            positionImage(images[i], i);
+        }
+    }
+
+    function positionImage(image, index) {
+        var imageCenter = chart.axisX[0].convertValueToPixel(chart.data[0].dataPoints[index].x);
+        var imageTop = chart.axisY[0].convertValueToPixel(chart.axisY[0].maximum) - 40;
+
+        image.width("40px")
+            .css({
+                "left": imageCenter - 20 + "px",
+                "position": "absolute",
+                "top": imageTop + "px",
+                "position": "absolute"
+            });
+    }
+
+    $(window).resize(function () {
+        var imageCenter = 0;
+        for (var i = 0; i < chart.data[0].dataPoints.length; i++) {
+            imageCenter = chart.axisX[0].convertValueToPixel(chart.data[0].dataPoints[i].x) - 20;
+            $(".sunny").eq(i).css({ "left": imageCenter });
+        }
+    });
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 100%; position: relative"></div>
+</body>
+</html>
