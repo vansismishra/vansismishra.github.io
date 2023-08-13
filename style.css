@@ -1,0 +1,117 @@
+*{
+   /* font-family: 'Cinzel', serif; */
+    font-family: 'Nunito', sans-serif;
+}
+.bg-image {
+    background-image: url('WeatherImg/sky.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.uptop{
+    max-width: calc(100%-1rem);
+    margin-right: 3rem;
+}
+
+.box1{
+   /* border: 5px solid pink;*/
+    height: fit-content;
+}
+.bboxx{
+    align-self: flex-end;
+}
+.push-up {
+   /* margin-top: 2px;  Adjust margin as needed */
+    transform: translateY(-2px);
+}
+.push-down {
+    /*margin-top: 2px;  Adjust margin as needed */
+    transform: translateY(4px);
+}
+.move-right {
+    /*margin-left: 2px;  Adjust margin as needed */
+    transform: translateX(2px);
+}
+.custom-height {
+    --flex-height: 80vh;
+    height: var(--flex-height);
+}
+.icon{
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+/*.top{
+    display: flex;
+    justify-content: center;
+}*/
+/*.add{
+    color: blue;
+    background-color: cornflowerblue;
+    background-color: #ffffff;
+    height: 24px;
+    border-radius: 5px;
+}*/
+.tg{
+    color: white;
+}
+.first{
+    height: 10px;
+    width: 12px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 3px;
+}
+.second{
+    width: 26px;
+}
+.sr{
+    height: 15px;
+    width: 16px;
+   /* max-width: 100%;
+    height: auto;*/
+}
+.container4{
+    transform: translateY(-16px);
+}
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 14px; /* Adjust height for larger circle */
+    background-color: #ccc;
+    border-radius: 14px; /* Adjust border-radius for larger circle */
+    cursor: pointer;
+}
+
+.toggle input {
+    display: none;
+}
+
+.toggle-indicator {
+    position: absolute;
+    top: -4px;
+    width: 24px; /* Adjust width for larger circle */
+    height: 22px; /* Adjust height for larger circle */
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.toggle input:checked + .toggle-indicator {
+    transform: translateX(100%);
+    background-color: blueviolet;
+}
+.cont1{
+    border: 5px solid pink;
+    height: fit-content;
+    width: 100%;
+}
+.row1{
+    align-items: center;
+    justify-content: center;
+}
+.cont2{
+    border: 5px solid greenyellow;
+    height: fit-content;
+    width: 100%;
+}

@@ -20,3 +20,62 @@ function fetchWeather(city) {
 
 const cityName = prompt('Enter a city:');
 fetchWeather(cityName);
+
+
+//For User Name:
+
+    const userNameSpan = document.getElementById('userName');
+    const openModalIcon = document.getElementById('openModal');
+    const nameModal = document.getElementById('nameModal');
+    const nameInput = document.getElementById('nameInput');
+    const nameSubmitButton = document.getElementById('nameSubmit');
+
+    // Open the modal
+    openModalIcon.addEventListener('click', () => {
+        nameModal.classList.remove('hidden');
+    });
+
+    // Close the modal
+    nameSubmitButton.addEventListener('click', () => {
+        const enteredName = nameInput.value.trim();
+        if (enteredName !== '') {
+            userNameSpan.textContent = enteredName;
+        }
+        nameModal.classList.add('hidden');
+    });
+
+
+//For Profile Picture
+/*const imageInput = document.getElementById('imageInput');
+const imagePreview = document.getElementById('imagePreview');
+
+imageInput.addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const imageUrl = URL.createObjectURL(file);
+        const img = new Image();
+        img.src = imageUrl;
+        img.className = 'custom-image';
+        imagePreview.innerHTML = '';
+        imagePreview.appendChild(img);
+    }
+});*/
+
+const imagePreview = document.getElementById('imagePreview');
+
+imagePreview.addEventListener('paste', (event) => {
+    const items = (event.clipboardData || event.originalEvent.clipboardData).items;
+    for (const item of items) {
+        if (item.kind === 'file' && item.type.startsWith('image/')) {
+            const blob = item.getAsFile();
+            const imageUrl = URL.createObjectURL(blob);
+
+            const imageElement = document.createElement('img');
+            imageElement.src = imageUrl;
+            imageElement.classList.add('pasted-image');
+
+            imagePreview.innerHTML = '';
+            imagePreview.appendChild(imageElement);
+        }
+    }
+});

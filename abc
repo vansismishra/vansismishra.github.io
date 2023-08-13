@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Nunito:wght@200&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+ <body class="bg-purple-300 flex justify-center items-center">
+    <div class="flex p-4 bg-blue-500 rounded-3xl shadow-md w-1/4 m-12 -mr-24 bg-image custom-height">
+       <div class="sm:container uptop flex flex-col gap-6">
+             <div class="container untop box1 flex flex-wrap space-around gap-4 uppbox">
+                <div class="h-4"><i class="material-icons bg-white text-blue m-2 rounded-lg">add</i></div>
+                <div class="flex m-2 h-4 flex-wrap">
+                    <ul class="flex flex-row items-center m-2 push-up">
+                      <li class=" second first"></li>
+                      <li class="first"></li>
+                      <li class="first"></li>
+                    </ul>
+                </div>
+                    <div class="flex items-center tg m-2 h-4"><span>&deg,C</span>
+                        <label class="toggle mr-1 ml-1">
+                        <input type="checkbox">
+                        <span class="toggle-indicator"></span>
+                        </label>
+                        <span>&deg,F</span></div>
+          </div>
+         <div class="container1 box1 m-2 flex flex-row gap-12">
+            <div class="one flex flex-col box1 gap-0.5">
+                <p class="text-white"><span><i class="material-icons outlined border-black bg-transparent">near_me</i></span>New York, USA</p>
+                <p class="text-white">Today 28 Sept</p>
+            </div>
+            <div class="two flex flex-col box1 bboxx gap-0.5">
+                <div class="flex flex-row">
+                    <ul class="flex flex-row gap-1">
+                    <li class="leading-4"><img src="WeatherImg/Sunrise.png" alt="Sunrise" class="sr"></li>
+                    <li class="text-white font-medium">07:19</li></ul></div>
+                    <div class="flex flex-row">
+                        <ul class="flex flex-row gap-1">
+                        <li class="leading-4"><img src="WeatherImg/Sunset.png" alt="Sunset" class="sr"></li>
+                        <li class="text-white font-medium">19:32</li></ul>
+                    </div>
+                </div>
+             </div>
+             <div class="container3 untop box1">
+                <div class="flex items-center justify-between px-4">
+                    <i class="material-icons text-white text-2xl">arrow_back_ios</i>
+                    <span class="text-white text-7xl font-bold">27&deg</span>
+                    <i class="material-icons text-white text-2xl">arrow_forward_ios</i>
+                </div>
+             </div>
+             <div class="container4">
+                <div class="sm:container sm:mx-auto text-center text-white font-bold leading-4 tracking-widest gap-4 push-up">
+                    <span class="inline-block"><i class="material-icons sun-icon push-down">wb_sunny</i></span>
+                    <span class="inline-block">Sunny</span>
+                </div>
+             </div>
+       </div>
+    </div>
+    <div class="flex p-4 bg-indigo-100 rounded-3xl shadow-md w-3/4 m-12 custom-height">
+          <div class="con1 flex flex-col w-full">
+            <div class="cont1 flex flex-row gap-4 justify-between w-full">
+                <div class="row1 flex flex-col">
+                    <ul class="justify-center items-center">
+                        <li class="font-extrabold text-xl leading-4 tracking-wide mb-3">Welcome back <span id="userName">User</span>!
+                        </li>
+                        <li class="font-bold text-lg leading-4 tracking-wide">Check out today's weather information</li>
+                    </ul>
+                </div>
+                <div class="row2 flex flex-row gap-4 justify-end">
+                     <div class="p-4 rounded flex flex-row gap-2 justify-end">
+
+              <!-- Three-dot icon -->
+            <div id="openModal" class="cursor-pointer"> <i class="material-icons">more_horiz</i></div>
+
+            <!-- Modal -->
+            <div id="nameModal" class="modal hidden fixed inset-0 flex justify-center items-center bg-gray-800 bg-opacity-50">
+            <div class="modal-content bg-white p-4 rounded shadow-lg">
+            <h2 class="text-lg font-semibold mb-2">Enter Your Name</h2>
+            <input type="text" id="nameInput" class="border rounded px-2 py-1 w-full mb-2">
+         <button id="nameSubmit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Submit</button>
+         </div>
+         </div>
+         <label class="block cursor-pointer custom-profile-photo">
+         <div class="h-8 w-8 bg-gray-500 rounded-lg flex items-center justify-center">
+        <input type="file" class="hidden" accept="image/*" id="imageInput">
+        <span class="material-icons text-white text-lg">add_a_photo</span>
+         </div>
+         </label>
+        <div id="imagePreview" class="custom-image"></div>
+         </div>
+        </div>
+        </div>
+         </div>
+    <div class="cont2 flex flex-col gap-3">
+              
+            
+    </div>
+    </div>
+</div>
+<script src="script.js"></script>
+
+
+</body>
+</html>
