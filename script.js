@@ -46,20 +46,6 @@ fetchWeather(cityName);
 
 
 //For Profile Picture
-/*const imageInput = document.getElementById('imageInput');
-const imagePreview = document.getElementById('imagePreview');
-
-imageInput.addEventListener('change', function(event) {
-    const file = event.target.files[0];
-    if (file) {
-        const imageUrl = URL.createObjectURL(file);
-        const img = new Image();
-        img.src = imageUrl;
-        img.className = 'custom-image';
-        imagePreview.innerHTML = '';
-        imagePreview.appendChild(img);
-    }
-});*/
 
 const imagePreview = document.getElementById('imagePreview');
 
