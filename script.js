@@ -23,7 +23,6 @@ fetchWeather(cityName);
 
 
 //For User Name:
-
     const userNameSpan = document.getElementById('userName');
     const openModalIcon = document.getElementById('openModal');
     const nameModal = document.getElementById('nameModal');
