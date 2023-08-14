@@ -23,8 +23,7 @@ window.onload = function () {
             title: "Temperature (°C)",
             suffix: " °C",
             maximum: 40,
-            gridThickness: 0,
-            interval: 2 // Set the Y-axis interval to match the data values
+            interval: 1 // Show y-axis labels at each interval
         },
         toolTip: {
             shared: true,
@@ -36,13 +35,14 @@ window.onload = function () {
             name: "Temperature",
             showInLegend: true,
             dataPoints: [
-                { label: "Monday", y: 26, name: "Temperature" },
-                { label: "Tuesday", y: 27, name: "Temperature" },
-                { label: "Wednesday", y: 27, name: "Temperature" },
-                { label: "Thursday", y: 27, name: "Temperature" },
-                { label: "Friday", y: 26, name: "Temperature" },
-                { label: "Saturday", y: 26, name: "Temperature" },
-                { label: "Sunday", y: 27, name: "Temperature" }
+                { label: "23%", y: 27, name: "Temperature" },
+                { label: "29%", y: 28, name: "Temperature" },
+                { label: "58%", y: 28, name: "Temperature" },
+                { label: "75%", y: 29, name: "Temperature" },
+                { label: "33%", y: 30, name: "Temperature" },
+                { label: "20%", y: 29, name: "Temperature" },
+                { label: "73%", y: 29, name: "Temperature" },
+                { label: "49%", y: 28, name: "Temperature" }
             ]
         }]
     });
@@ -63,7 +63,7 @@ window.onload = function () {
 
     function positionImage(image, index) {
         var imageCenter = chart.axisX[0].convertValueToPixel(chart.data[0].dataPoints[index].x);
-        var imageTop = chart.axisY[0].convertValueToPixel(chart.axisY[0].maximum) - 40;
+        var imageTop = 370 - 40; // Fixed value for image top position (chart height - image height)
 
         image.width("40px")
             .css({

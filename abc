@@ -109,3 +109,26 @@
 
 </body>
 </html>
+
+
+<div class="left flex">
+    <div class="">Upcoming hours</div>
+</div>
+
+<div class="right flex justify-end">
+    <div>Rain precipitation <span> <i class="material-icons">expand_more</i></span></div>
+    <div>Next days <span> <i class="material-icons">chevron_right</i></span></div>
+</div>
+
+<div class="contt1 flex flex-row gap-3">
+    <div class="b1 flex flex-row">
+        <div class="left flex">
+            <div class="">Upcoming hours</div>
+        </div>
+    <div class="b2 flex justify-end">
+        <div class="right flex justify-end">
+            <div>Rain precipitation <span> <i class="material-icons">expand_more</i></span></div>
+            <div>Next days <span> <i class="material-icons">chevron_right</i></span></div>
+        </div>
+    </div>
+       </div>
