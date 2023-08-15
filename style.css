@@ -32,10 +32,10 @@
     /*margin-left: 2px;  Adjust margin as needed */
     transform: translateX(2px);
 }
-.custom-height {
+/* .custom-height {
     --flex-height: 80vh;
     height: var(--flex-height);
-}
+}*/
 .icon{
     font-size: 1.5rem;
     border-radius: 5px;
@@ -215,6 +215,7 @@ width: 230px;
     border-radius: 4px;
     background-color: rgb(99 102 241);
 }
-.rrab{
-     
+
+.httt{
+    height: 850px;
 }
