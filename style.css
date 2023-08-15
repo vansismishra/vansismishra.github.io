@@ -112,9 +112,9 @@
 }
 .cont2{
     height: fit-content;
-    width: 95%;
-    justify-content: center;
-    margin: 2rem;
+    width: 90%;
+   /* justify-content: center;
+    margin: 2rem;*/
 }
 .icc {
     vertical-align: middle;
@@ -146,4 +146,75 @@
 .short-box{
 height: 130px;
 width: 230px;
+}
+.chart{
+    margin: auto;
+}
+
+.progress{
+    position: relative;
+    margin: 4px;
+    float:left;
+    text-align: center;
+  }
+  .barOverflow{ /* Wraps the rotating .bar */
+    position: relative;
+    overflow: hidden; /* Comment this line to understand the trick */
+    width: 90px; height: 45px; /* Half circle (overflow) */
+    margin-bottom: -14px; /* bring the numbers up */
+  }
+  .bar{
+    position: absolute;
+    top: 0; left: 0;
+    width: 90px; height: 90px; /* full circle! */
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 5px solid #eee;     /* half gray, */
+    border-bottom-color: rgb(99 102 241);  /* half azure */
+    border-left-color: rgb(99 102 241);
+  }
+ /* .invert_effect {
+    filter: invert(100%);
+}*/
+  .down{
+    margin: auto;
+  }
+  .box-container {
+    display: flex;
+    justify-content: space-between;
+    width: 10rem; /* 2 * 3 boxes */
+}
+
+.boxes {
+    width: 0.7rem;
+    height: 0.5rem;
+    border-radius: 4px;
+    background-color: grey;
+}
+.boxess{
+    width: 0.7rem;
+    height: 0.5rem;
+    border-radius: 4px;
+    background-color: rgb(99 102 241);
+}
+.ctk{
+    width: 1.5rem;
+    height: 0.5rem;
+    border-radius: 4px;
+    background-color: grey;
+    opacity: 3;
+}
+.ct{
+    width: 1.5rem;
+    height: 0.5rem;
+    border-radius: 4px;
+    background-color: rgb(99 102 241);
+}
+.barr{
+    height: 0.5rem;
+    border-radius: 4px;
+    background-color: rgb(99 102 241);
+}
+.rrab{
+     
 }
