@@ -21,7 +21,14 @@ function fetchWeather(city) {
 const cityName = prompt('Enter a city:');
 fetchWeather(cityName);
 
+//For Today's Date:
+const currentDate = new Date();
+const day = currentDate.getDate();
+const month = currentDate.toLocaleString('default', { month: 'long' });
 
+const dateTodayElement = document.getElementById("date_today");
+dateTodayElement.textContent = `${day}th ${month}`;
+  
 //For User Name:
     const userNameSpan = document.getElementById('userName');
     const openModalIcon = document.getElementById('openModal');
