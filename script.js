@@ -18,8 +18,8 @@ function fetchWeather(city) {
     });
 }
 
-const cityName = prompt('Enter a city:');
-fetchWeather(cityName);
+//const cityName = prompt('Enter a city:');
+//fetchWeather(cityName);
 
 //For Today's Date:
 const currentDate = new Date();
