@@ -36,6 +36,12 @@ dateTodayElement.textContent = `${day}th ${month}`;
     const nameInput = document.getElementById('nameInput');
     const nameSubmitButton = document.getElementById('nameSubmit');
 
+    // Retrieve user name from localStorage
+    const savedUserName = localStorage.getItem('userName');
+    if (savedUserName) {
+        userNameSpan.textContent = savedUserName;
+    }
+
     // Open the modal
     openModalIcon.addEventListener('click', () => {
         nameModal.classList.remove('hidden');
@@ -43,19 +49,34 @@ dateTodayElement.textContent = `${day}th ${month}`;
 
     // Close the modal
     nameSubmitButton.addEventListener('click', () => {
-        const enteredName = nameInput.value.trim();
-        if (enteredName !== '') {
-            userNameSpan.textContent = enteredName;
-        }
-        nameModal.classList.add('hidden');
-    });
+      submitName();
+  });
+
+  nameInput.addEventListener('keydown', (e) => {
+      if (e.key === "Enter") {
+          submitName();
+      }
+  });
+
+  function submitName() {
+      const enteredName = nameInput.value.trim();
+      if (enteredName !== '') {
+          userNameSpan.textContent = enteredName;
+
+          // Save the user's name in localStorage
+          localStorage.setItem('userName', enteredName);
+      }
+      nameModal.classList.add('hidden');
+  }
+
+    
 
 
 //For Profile Picture
 
-const imagePreview = document.getElementById('imagePreview');
+//const imagePreview = document.getElementById('imagePreview');
 
-imagePreview.addEventListener('paste', (event) => {
+/*imagePreview.addEventListener('paste', (event) => {
     const items = (event.clipboardData || event.originalEvent.clipboardData).items;
     for (const item of items) {
         if (item.kind === 'file' && item.type.startsWith('image/')) {
@@ -70,7 +91,36 @@ imagePreview.addEventListener('paste', (event) => {
             imagePreview.appendChild(imageElement);
         }
     }
-});
+});*/
+
+const avatarImage = document.getElementById('avatar-image');
+const fileInput = document.getElementById('avatar-upload');
+
+// Check if avatar data exists in localStorage and set it if available
+const savedAvatarData = localStorage.getItem('userAvatar');
+if (savedAvatarData) {
+    avatarImage.src = savedAvatarData;
+}
+
+function updateAvatar() {
+    const file = fileInput.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            const avatarData = e.target.result;
+
+            // Update the avatar image
+            avatarImage.src = avatarData;
+
+            // Save the avatar data to localStorage
+            localStorage.setItem('userAvatar', avatarData);
+        };
+
+        reader.readAsDataURL(file);
+    }
+}
 
 //For Radial Progress Bar
 $(".progress").each(function(){
